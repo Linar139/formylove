@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>продолжение</title>
+    <style>
+    body {
+        margin-top: 10%;
+            background-color: #f5f5f5;
+        }
+        h1{
+            color: red;
+            text-align: center;
+        }
+        .button1{
+            background-color: white;
+            border: 5px solid purple;
+            width: 40%;
+            position: absolute;
+            bottom: 20%;
+            margin-left: 30%;
+            margin-right: 30%;
+            font-size: larger;
+        }
+    .hidden {
+  display: none;
+}
+.love_icon{
+    width: 80%;
+    margin-left: 10%;
+}
+        </style>
+</head>
+<body>
+    <button id="button1" class="button1">НАЖМИ НА МЕНЯ</button>
+    <script>
+    let words = ["Я", "ТЕБЯ", "ЛЮБЛЮ!!!!"];
+    let wordsbtn = ["ЕЩЕ РАЗ НАЖМИ","И В ПОСЛЕДНИЙ РАЗ"]
+    let i = 0;
+    document.getElementById('button1').onclick = myFunction;
+    function myFunction() {
+        const header = document.createElement("h1");     // создаем заголовок <h1>
+        const headerText = document.createTextNode(words[i]);  // создаем текстовый узел
+        header.appendChild(headerText); // добавляем в элемент h1 текстовый узел
+        document.body.appendChild(header); 
+        if(i<2){
+            document.getElementsByClassName("button1")[0].textContent=wordsbtn[i];
+        } else {
+            document.getElementById("button1").classList.add("hidden");
+        }
+        if(i==2){
+            setTimeout(function showpng(){
+                let picture = document.createElement('img');
+                picture.className="love_icon";
+                picture.src="icons/love.png";
+                picture.alt="тут должна была появиться картинка...";
+                document.body.append(picture);
+            }, 1000)
+        }
+        i++;
+    }
+    </script>
+    <!--Я счастлив, что встретил тебя) Ты самая идеальная девушка на свете!!!! Ты мой джекпот и мне кроме тебя ничего и никого больше не надо
+        Спасибо, что ты есть)-->
+</body>
+</html>

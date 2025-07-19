@@ -1,0 +1,158 @@
+body{
+    margin-top: 10%;
+    background-color: #f7e7e6;
+}
+p{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+.gradient{
+  color: transparent;
+  -webkit-background-clip: text;
+	background-clip: text;
+	background-image: linear-gradient(to right, red, blue);
+}
+.heart {
+    margin-left: 6%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    position: relative;
+    width: 100px;
+    height: 90px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.heart:before, .heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: #ff5e5e;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+        
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.heart_text{
+    position: relative;
+    width: 60%;
+    margin-top: 13%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.wrapper{
+    margin-left: 5%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    border: solid red;
+}
+/* Основной контейнер слайдера */
+        /* Основной контейнер слайдера */
+        .slider {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%; /* Фиксированная ширина слайдера */
+            overflow: hidden; /* Обрезаем всё, что выходит за границы контейнера */
+            position: relative; /* Необходимо для правильного позиционирования кнопок */
+        }
+
+        /* Контейнер всех слайдов */
+        .slides {
+            display: flex; /* Размещаем слайды в одну линию */
+            transition: transform 0.5s ease-in-out; /* Анимация плавного смещения */
+        }
+
+        .slide {
+    width: 100%; /* Занимает всю ширину контейнера */
+    display: flex; /* Добавляем flex для центрирования */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    flex-shrink: 0; /* Запрещаем сжатие */
+}
+
+/* Стили для изображений */
+.photo{
+    margin-top: 5%;
+    text-align: center;
+}
+.slide img {
+    width: 100%; /* Картинки растягиваются на весь слайд */
+    display: block; /* Убираем пробелы вокруг изображений */
+}
+/* Кнопки «Назад» и «Вперёд» */
+.prev, .next {
+    position: absolute; /* Позволяет располагать кнопки поверх слайдов */
+    top: 50%; /* Размещаем по вертикали по центру */
+    transform: translateY(-50%); /* Сдвигаем кнопки вверх на половину их высоты */
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон кнопок */
+    color: white; /* Белый цвет текста */
+    border: none; /* Убираем границы */
+    padding: 10px; /* Отступы внутри кнопки */
+    cursor: pointer; /* Изменяем курсор на указатель */
+    font-size: 18px; /* Размер шрифта */
+    font-weight: bold; /* Делаем текст жирным */
+    z-index: 2; /* Размещаем кнопки выше всех элементов */
+}
+/* Позиционируем кнопку «Назад» слева */
+.prev {
+    left: 10px;
+}
+/* Позиционируем кнопку «Вперёд» справа */
+.next {
+    right: 10px;
+}
+.happy{
+    margin-top: 10%;
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-left: auto;
+    margin-right: auto;
+    > img {
+        margin-top: 5%;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media only screen and (orientation: landscape){
+    .wrapper{
+        width: 80%;
+        margin-left: 10%;
+    }
+    .heart{
+        margin-left: 12%;
+    }
+}
